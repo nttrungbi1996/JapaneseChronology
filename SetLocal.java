@@ -1,5 +1,3 @@
-package local.localdate;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.chrono.JapaneseChronology;
@@ -22,7 +20,7 @@ public class SetLocal {
 
 	public static String setLocalDateTime(LocalDateTime localDateTime) {
 
-		// 令和xx年xx月xx日 形式に変換
+		// 令和xx年xx月xx日 xx時xx分 形式に変換
 		DateTimeFormatter japaneseEraDtf = DateTimeFormatter.ofPattern("Gyy年MM月dd日HH時mm分")
 				.withChronology(JapaneseChronology.INSTANCE)
 				.withLocale(Locale.JAPAN);
