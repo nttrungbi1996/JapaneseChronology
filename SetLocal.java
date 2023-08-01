@@ -6,9 +6,13 @@ import java.util.Locale;
 
 public class SetLocal {
 
+	// 令和xx年xx月xx日 形式に変換
 	public static String setLocalDate(LocalDate localDate) {
-
-		// 令和xx年xx月xx日 形式に変換
+		
+		if (localDate == null) {
+			return "";
+		}
+		
 		DateTimeFormatter japaneseEraDtf = DateTimeFormatter.ofPattern("Gyy年MM月dd日")
 				.withChronology(JapaneseChronology.INSTANCE)
 				.withLocale(Locale.JAPAN);
@@ -18,9 +22,13 @@ public class SetLocal {
 		return formattedDate;
 	}
 
+	// 令和xx年xx月xx日 xx時xx分 形式に変換
 	public static String setLocalDateTime(LocalDateTime localDateTime) {
 
-		// 令和xx年xx月xx日 xx時xx分 形式に変換
+		if (localDateTime == null) {
+			return "";
+		}
+		
 		DateTimeFormatter japaneseEraDtf = DateTimeFormatter.ofPattern("Gyy年MM月dd日HH時mm分")
 				.withChronology(JapaneseChronology.INSTANCE)
 				.withLocale(Locale.JAPAN);
